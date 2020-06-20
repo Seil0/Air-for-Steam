@@ -1,12 +1,13 @@
 "Resource/layout/subpaneloptionsingame.layout" {
 
 	layout {
-		place {
-			control=EnableOverlayCheck,EnableSCTenFootOverlayCheck,EnableVRDesktopGameTheaterCheck
-			dir=down width=max margin-top=-4
-		}
+		place { control=EnableOverlayCheck									dir=down width=max margin-top=-4 }
+		place [!$OSX] { controls=EnableSCTenfootOverlayCheck				dir=down width=max start=EnableOverlayCheck}
+		place [!$OSX&&!$LINUX] { controls=EnableVRDesktopGameTheaterCheck	dir=down width=max start=EnableSCTenfootOverlayCheck}
 
 		place { control=PingRateLabel					dir=down width=max start=EnableVRDesktopGameTheaterCheck y=15 }
+		place [$LINUX] { control=PingRateLabel			dir=down width=max start=EnableSCTenfootOverlayCheck y=15 }
+		place [$OSX] { control=PingRateLabel			dir=down width=max start=EnableOverlayCheck y=15 }
 		place { control=PingRateCombo					dir=down width=max start=PingRateLabel y=5 }
 
 		place { control=ShowIngameFPSLabel				dir=down start=PingRateCombo y=20 }
