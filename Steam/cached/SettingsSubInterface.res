@@ -1,4 +1,4 @@
-steam/cached/SettingsSubInterface.res {
+Steam/cached/SettingsSubInterface.res {
 	layout {
 		place { control=Label4 dir=down }
 		place { control=LanguageCombo dir=down width=max start=Label4 y=5 }
@@ -16,12 +16,11 @@ steam/cached/SettingsSubInterface.res {
 		}
 
 		place [$LINUX||$OSX] {
-			control=DPIScalingCheck,AutoLaunchCheck,BigPictureModeCheck,UrlBarCheck,GPUWebViewCheck
+			control=DPIScalingCheck,AutoLaunchCheck,BigPictureModeCheck,UrlBarCheck,GPUWebViewCheck,SmoothScrollWebViewCheck,H264HWAccelCheck
 			dir=down start=SkinCombo y=20
 		}
 
-		place [$LINUX||$OSX] { control=NotifyAvailableGamesCheck dir=down start=GPUWebViewCheck y=4 }
-		place [$WINDOWS] { control=NotifyAvailableGamesCheck dir=down start=H264HWAccelCheck y=4 }
+		place { control=NotifyAvailableGamesCheck dir=down start=H264HWAccelCheck y=4 }
 
 		place { control=SetJumpListOptionsButton dir=down start=NotifyAvailableGamesCheck y=10 }
 
