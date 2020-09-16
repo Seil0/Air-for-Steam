@@ -5,22 +5,28 @@
 		place { control=DownloadRegionCombo dir=down width=max start=RegionLabel dir=down y=5 }
 
 		place { control=RestrictionsLabel dir=down start=DownloadRegionCombo y=20 }
-		place { control=ThrottleRates dir=down width=max start=RestrictionsLabel y=5 }
 
 		place {
 			control=AllowDownloadsDuringGameplayCheckbox,ThrottleDownloadsWhileStreamingCheckbox,DownloadRatesInBitsCheckbox,AutoUpdateTimeRestrictCheckbox
 			dir=down
-			start=ThrottleRates
+			start=RestrictionsLabel
 			y=20
 		}
 
-		place { control=AutoUpdateTimeRestrictStartLabel dir=down start=AutoUpdateTimeRestrictCheckbox y=10 }
-		place { control=AutoUpdateTimeRestrictStart dir=down width=205 start=AutoUpdateTimeRestrictStartLabel y=5 }
+		place { control=AutoUpdateTimeRestrictStartLabel dir=down start=AutoUpdateTimeRestrictCheckbox y=5 }
+		place { control=AutoUpdateTimeRestrictStart dir=rigth width=105 start=AutoUpdateTimeRestrictStartLabel }
+		place { control=AutoUpdateTimeRestrictEndLabel dir=rigth start=AutoUpdateTimeRestrictStart margin-left=20 }
+		place { control=AutoUpdateTimeRestrictEnd dir=rigth width=105 start=AutoUpdateTimeRestrictEndLabel margin-left=20 }
+		
+		place { controls="ThrottleCheckbox" dir=down start=AutoUpdateTimeRestrictStartLabel y=20 }
+		place { controls="ThrottleRateCurrent" dir=right start=ThrottleCheckbox width=235 margin-top=5 }
+		
+		place { controls="ThrottleRateEditLabel" dir=down start=ThrottleCheckbox width=175 y=5}
+		place { controls="ThrottleRateEdit" dir=down start=ThrottleRateEditLabel width=125 height=25 }
+		place { controls="ThrottleRateEditSuffix" dir=right start=ThrottleRateEdit y=5 }
+		place { controls="ThrottleRateApply" dir=down start=ThrottleRateEdit width=70 height=25 y=10 }
 
-		place { control=AutoUpdateTimeRestrictEndLabel dir=down x=225 start=AutoUpdateTimeRestrictCheckbox y=10 }
-		place { control=AutoUpdateTimeRestrictEnd dir=down width=205 start=AutoUpdateTimeRestrictEndLabel y=5 }
-
-		place { control=FlushDownloadConfigLabel dir=down start=AutoUpdateTimeRestrictStart y=30 }
+		place { control=FlushDownloadConfigLabel dir=down start=ThrottleRateApply y=30 }
 		place { control=FlushDownloadConfig dir=down start=FlushDownloadConfigLabel y=10 }
 
 		place { control=ManageInstalledappsLabel dir=down start=FlushDownloadConfig y=30 }
