@@ -3,16 +3,23 @@
 	layout {
 		place { control=DescriptionLabel dir=down width=max }
 		place { control=RemoteClientList start=DescriptionLabel dir=down width=max height=120 y=20 }
+		
+		place { control=Pair start=RemoteClientList dir=down y=5 }
+		place { control=Unpair start=Pair dir=right x=5 }
 
-		place { control=EnableStreaming start=RemoteClientList dir=down width=max y=10 }
+		place { control=EnableStreaming start=Pair dir=down width=max y=10 }
+		
+		place { control=P2PScopeLabel start=EnableStreaming dir=down width=400 y=10 }
+		place { control=P2PScope start=P2PScopeLabel dir=down width=max y=5 }
 
-		place { control=SetPin start=EnableStreaming dir=down y=10 }
+		place { control=SetPin start=P2PScope dir=down y=10 }
 		place { control=AdvancedHostOptions start=SetPin dir=down y=0 }
 		place { control=AdvancedClientOptions start=AdvancedHostOptions dir=down y=0 }
+		
+		place { control=ClientLabelLocal start=AdvancedClientOptions dir=down width=max y=10 }
+		place { control=ClientLabelRemote start=AdvancedClientOptions dir=down width=max y=10 }
 
-		place { control=ClientLabel start=AdvancedClientOptions dir=down width=max y=30 }
-
-		place { control=QualityFast start=ClientLabel dir=down y=5 }
+		place { control=QualityFast start=AdvancedClientOptions dir=down  margin-top=30 y=5 }
 		place { control=QualityBalanced start=QualityFast dir=right margin-left=10 }
 		place { control=QualityBeautiful start=QualityBalanced dir=right margin-left=10 }
 
