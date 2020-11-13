@@ -14,3 +14,7 @@ This is an archive of the final official release of Air. Thanks for all your sup
 ## Community
 
 Stay up to date with Air on the [Steam Community Group](https://steamcommunity.com/groups/airforsteam).
+
+### Note
+
+This repo contains a fork of the original Air for Steam skin with some additional fixes and updates.
